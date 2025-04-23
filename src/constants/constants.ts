@@ -14,6 +14,8 @@ import {
 } from '@mui/icons-material';
 import { MovieList, TopList } from '@/constants/types.ts';
 
+export type IconName = keyof typeof iconComponents;
+
 export const iconComponents = {
   AutoAwesome,
   Bloodtype,

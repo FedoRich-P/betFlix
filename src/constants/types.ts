@@ -1,6 +1,4 @@
-import { iconComponents } from '@/constants/constants.ts';
-
-export type IconName = keyof typeof iconComponents;
+import { IconName } from '@/constants/constants.ts';
 
 export type MovieList = {
   title: string;
