@@ -1,0 +1,11 @@
+.img {
+  display: block;
+  max-width: 100%;
+  //border: 2px solid dodgerblue;
+  //border-radius: 5px;
+  transition: transform .4s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
