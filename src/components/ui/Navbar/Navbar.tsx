@@ -20,8 +20,7 @@ import {
 import { useState } from 'react';
 import { NavLink } from 'react-router';
 import s from './Navbar.module.scss';
-import { iconComponents, MOVIE_LISTS, TOP_LISTS } from '@/constants/constants';
-import { IconName } from '@/constants/types.ts';
+import { iconComponents, IconName, MOVIE_LISTS, TOP_LISTS } from '@/constants/constants';
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
