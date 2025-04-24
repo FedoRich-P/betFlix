@@ -5,7 +5,7 @@ import { Movies } from '@/components/pages/Movies/Movies.tsx';
 import { MoviesListTop } from '@/components/pages/MoviesListTop/MoviesListTop.tsx';
 import { MovieDetail } from '@/components/pages/MovieDetail/MovieDetail.tsx';
 import { ActorDetail } from '@/components/pages/ActorDetail/ActorDetail.tsx';
-import { Layout } from '@/components/Layout/Layout.tsx';
+import { Layout } from '@components/ui/Layout.tsx';
 
 export const router = createBrowserRouter([
   {

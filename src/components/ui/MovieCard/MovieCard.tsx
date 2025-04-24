@@ -1,28 +1,33 @@
-import { Rating, Stack, Tooltip, Typography } from '@mui/material';
+import { Rating, Stack, Tooltip } from '@mui/material';
 
-import s from './MovieCard.module.scss';
-import { Link } from 'react-router';
+import style from './MovieCard.module.scss';
+import { NavLink } from 'react-router';
+import { FilmApiMovieCard } from '@services/api.ts';
 
 type Props = {
-  movie: any;
+  movie: FilmApiMovieCard;
 };
 
 export const MovieCard = ({ movie }: Props) => {
+  const { kinopoiskId, ratingKinopoisk, posterUrlPreview, nameEn, nameRu } = movie;
   return (
-    <Stack
-      justifyContent={'space-between'}
-      border={'2px solid dodgerblue'}
-      borderRadius={'6px'}
-      overflow={'hidden'}>
-      <Link to={`/movie/${movie.kinopoiskId}`}>
-        <img className={s.img} src={movie.posterUrlPreview} alt={movie.nameRu} />
-      </Link>
-      <Stack padding={'5px 10px'} alignItems={'center'}>
-        <Typography>{movie.nameRu ? movie.nameRu : movie.nameEn}</Typography>
-        <Tooltip title={`${movie.ratingKinopoisk} / 10`}>
-          <Rating name={'read-only'} readOnly value={movie.ratingKinopoisk / 2} precision={0.2} />
-        </Tooltip>
-      </Stack>
-    </Stack>
+    <article className="border-2 border-[dodgerblue] rounded-md overflow-hidden text-center">
+      <NavLink
+        className={'flex flex-col justify-between w-full h-full'}
+        to={`/movie/${kinopoiskId}`}>
+        <img className={style.img} src={posterUrlPreview} alt={nameRu} />
+        <Stack className={'p-2.5 items-center'}>
+          <h3 className={'text-lg font-bold text-gray-600'}>{nameRu ? nameRu : nameEn}</h3>
+          <Tooltip title={`${ratingKinopoisk} / 10`}>
+            <Rating
+              name={'read-only'}
+              readOnly
+              value={(ratingKinopoisk || 2) / 2}
+              precision={0.2}
+            />
+          </Tooltip>
+        </Stack>
+      </NavLink>
+    </article>
   );
 };
