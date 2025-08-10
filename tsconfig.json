@@ -35,8 +35,6 @@
       "@services/*": ["src/services/*"]
     }
   },
-  "include": ["src",
-    "src/@types/declarations.d.ts"
-  ],
+  "include": ["src", "src/@types/declarations.d.ts"],
   "exclude": ["node_modules"]
 }
